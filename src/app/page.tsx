@@ -1,10 +1,11 @@
-import styles from './page.module.css'
+import layout from '@/app/layout.module.css'
+// import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <div className={styles.intro}>
+    <div className={layout.page}>
+      <main className={layout.main}>
+        <div className={layout.intro}>
           <h1>Trivia Quiz</h1>
           <p>
             Get as many answers as you can. Select number of questions and level
