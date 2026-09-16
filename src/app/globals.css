@@ -31,6 +31,74 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+form {
+  /* display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px; */
+  width: min(100%, 440px);
+  margin-top: 44px;
+  padding: 22px;
+  border: 1px solid #e7e1d7;
+  border-radius: 18px;
+  background: #fffdf9;
+  box-shadow: 0 18px 40px rgb(66 47 25 / 10%);
+}
+
+form select,
+form button {
+  min-height: 52px;
+  width: 100%;
+  border-radius: 11px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  margin-bottom: 1rem;
+}
+
+form select {
+  appearance: none;
+  border: 1px solid #dcd3c5;
+  padding: 0 42px 0 15px;
+  color: #302a23;
+  background-color: #ffffff;
+  background-image: linear-gradient(45deg, transparent 50%, #8b6f47 50%),
+    linear-gradient(135deg, #8b6f47 50%, transparent 50%);
+  background-position: calc(100% - 19px) 22px, calc(100% - 14px) 22px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+  cursor: pointer;
+}
+
+form button {
+  grid-column: 1 / -1;
+  border: 0;
+  padding: 0 18px;
+  color: #fffdf9;
+  background: #c85c35;
+  box-shadow: 0 8px 16px rgb(200 92 53 / 22%);
+  cursor: pointer;
+}
+
+form select:focus-visible,
+form button:focus-visible {
+  outline: 3px solid rgb(200 92 53 / 25%);
+  outline-offset: 2px;
+}
+
+form select:hover {
+  border-color: #bca98f;
+}
+
+form button:hover {
+  background: #ad4927;
+  transform: translateY(-1px);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -45,5 +113,44 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+
+  form {
+    border-color: #292722;
+    background: #151411;
+    box-shadow: 0 18px 40px rgb(0 0 0 / 28%);
+  }
+
+  form select {
+    border-color: #3a352e;
+    color: #f3eee6;
+    background-color: #201e1a;
+    background-image: linear-gradient(45deg, transparent 50%, #c5a77d 50%),
+      linear-gradient(135deg, #c5a77d 50%, transparent 50%);
+  }
+
+  form select:hover {
+    border-color: #675a49;
+  }
+
+  form button {
+    color: #fff8f0;
+    background: #d56a3f;
+  }
+
+  form button:hover {
+    background: #e17a4f;
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+    padding: 16px;
+  }
+
+  form button {
+    grid-column: auto;
   }
 }
